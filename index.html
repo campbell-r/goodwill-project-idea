@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>GoodWill Project</title>
+  <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Goodwill</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Donations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav><!-- NOTE: end of nav bar -->
+
+  <div class="container-fluid">
+    <div class="row">
+
+
+      <div class="col-sm-4">
+        <h1 class="text-center">Donations</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+          book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+          recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+      </div><!-- NOTE: end of col-sm-4 -->
+      <div class="col-sm-4">
+        <!-- NOTE: start of calculator -->
+        <div id="mainview" class="container-fluid">
+          <div class="row py-2">
+            <div class="col text-center">
+              <button type="button" title="Clothes" class="btn btn-outline-primary btn-lg customBtn" onclick="goToButtonView(0)">
+                <i class="fas fa-tshirt"></i></a>
+              </button>
+            </div>
+            <div class="col text-center">
+              <button type="button" title="Purses/Shoes" class="btn btn-outline-primary btn-lg customBtn" onclick="goToButtonView(1)">
+               <i class="fas fa-shopping-bag"></i>
+              </button>
+            </div>
+            <div class="col text-center">
+              <button type="button" title="Linens" class="btn btn-outline-primary btn-lg customBtn" onclick="goToButtonView(2)">
+              <i class="fas fa-bed"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row py-2">
+            <div class="col text-center">
+              <button type="button" title="Accessories!" class="btn btn-outline-primary btn-lg customBtn" onclick="goToButtonView(3)">
+               <i class="fas fa-glasses"></i>
+              </button>
+            </div>
+            <div class="col text-center">
+              <button type="button" title="Appliances" class="btn btn-outline-primary btn-lg customBtn" onclick="goToButtonView(4)">
+              <i class="fas fa-blender"></i>
+              </button>
+            </div>
+            <div class="col text-center">
+              <button type="button" title="Books/Media" class="btn btn-outline-primary btn-lg customBtn" onclick="goToButtonView(5)">
+              <i class="fas fa-book"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row py-2">
+            <div class="col text-center">
+              <button type="button" title="Toys/Games" class="btn btn-outline-primary btn-lg customBtn" onclick="goToButtonView(6)">
+              <i class="fas fa-gamepad"></i>
+              </button>
+            </div>
+            <div class="col text-center">
+              <button type="button" title="Electronics/Computers" class="btn btn-outline-primary btn-lg customBtn" onclick="goToButtonView(7)">
+             <i class="fas fa-plug"></i>
+              </button>
+            </div>
+            <div class="col text-center">
+              <button type="button" title="Furniture" class="btn btn-outline-primary btn-lg customBtn" onclick="goToButtonView(8)">
+              <i class="fas fa-chair"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row py-2">
+            <div class="col text-center">
+              <button type="button" title="Athletic Equipment" class="btn btn-outline-primary btn-lg customBtn" onclick="goToButtonView(9)">
+              <i class="fas fa-football-ball"></i>
+              </button>
+            </div>
+            <div class="col text-center">
+              <button type="button" title="Other" class="btn btn-outline-primary btn-lg customBtn" onclick="goToButtonView(10)">
+              <i class="fas fa-question-circle"></i></i>
+              </button>
+            </div>
+            <div class="col text-center">
+              <button type="button" title="Monetary Donation" class="btn btn-outline-primary btn-lg customBtn" onclick="goToButtonView(11)">
+              <i class="fas fa-money-bill-wave"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row py-2">
+            <div class="col">
+              <button type="button" title="Calculate" class="btn btn-primary btn-large w-100 customBtn" onclick="showResults()"><i class="fas fa-calculator"></i></button>
+            </div>
+          </div> <!-- NOTE: end of row -->
+        </div><!-- NOTE: end of container-fluid -->
+        <div id="btnview" class="container-fluid" style="visibility:hidden;display:none;">
+          <label>Amount of Items:</label>
+          <br/>
+          <input type="number" class="form-control" id="buttonInput" min=0 value=0>
+          <br/>
+          <button type="button" title="Update"  class="btn btn-outline-primary"  onclick="updateCurrentValue()">Update</button>
+          <br/>
+          <button type="button" title="Click me!"  class="btn btn-outline-primary"  onclick="returnToMainView()">Go Back</button>
+        </div>
+        <div id="resultsview" class="container-fluid" style="visibility:hidden;display:none;">
+          <label>Whatever you want to put here:</label>
+          <br/>
+          <span id="resultText"></span>
+          <br/>
+          <button type="button" title="Click me!" class="btn btn-outline-primary"  onclick="returnToMainView()">Go Back</button>
+        </div>
+      </div><!-- NOTE: end of col-sm-4 -->
+      <div class="col-sm-4">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17136.178926048746!2d-117.27288370744677!3d34.10922383044018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c35356bb2c859d%3A0x9092025f05579770!2sGoodwill+Southern+California+Outlet+Store!5e0!3m2!1sen!2sus!4v1566326655685!5m2!1sen!2sus"
+          class="w-100" width="" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div><!-- NOTE: end of col-sm-4 -->
+    </div><!-- NOTE: end of row -->
+  </div><!-- NOTE: end of container-fluid -->
+  <div class="container-fluid text-white" id="bottom-container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="text-center">Here is some more content!</h1>
+        <p class="ml-3">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+          ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+          sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+          autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+      </div><!-- NOTE: end of col-sm-12 -->
+    </div><!-- NOTE: end of row -->
+  </div><!-- NOTE: end of container-fluid -->
+  <!-- NOTE: start of scripts -->
+  <script src="https://kit.fontawesome.com/ebdf8ad8f3.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
